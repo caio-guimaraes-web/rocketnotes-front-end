@@ -82,7 +82,7 @@ export function Home() {
       <Search>
         <Input
           placeholder="Pesquisar pelo título"
-          onChange={() => {
+          onChange={(e) => {
             setSearch(e.target.value)
           }}
         />
