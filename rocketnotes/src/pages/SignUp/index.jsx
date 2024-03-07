@@ -26,7 +26,7 @@ export function SignUp() {
       .post("/users", { name, email, password })
       .then(() => {
         alert("Usuário cadastrado com sucesso!")
-        navigate("/")
+        navigate(-1)
       })
       .catch((error) => {
         if (error.response) {

@@ -16,7 +16,7 @@ export function Details() {
   const navigate = useNavigate()
 
   function handleBack() {
-    navigate("/")
+    navigate(-1)
   }
 
   async function handleRemove() {
@@ -24,7 +24,7 @@ export function Details() {
 
     if (confirm) {
       await api.delete(`/notes/${params.id}`)
-      navigate("/")
+      navigate(-1)
     }
   }
 
@@ -54,7 +54,11 @@ export function Details() {
                 <Links>
                   {data.links.map((link) => (
                     <li key={String(link.id)}>
-                      <a href={link.url} target="_blank">
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         {link.url}
                       </a>
                     </li>
